@@ -29,8 +29,14 @@ public:
 			this->name = nameOrg(name);
 		}
 		void setPass(string pass) {
+		if (pass.length() == 7) {
 			this->pass = pass;
 		}
+		else {
+			cout << "Password must be exactly 7 characters long.\n";
+			this->pass = "0000000";
+		}
+	}
 		
 		//Getters:
 		string getName() {
