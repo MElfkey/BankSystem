@@ -1,0 +1,19 @@
+﻿  Admin.cpp
+C:\Users\moham\Downloads\Bank-System-main\Client.h(106,10): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Admin.cpp')
+  
+  Book System.cpp
+C:\Users\moham\Downloads\Bank-System-main\Client.h(106,10): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Book%20System.cpp')
+  
+  Client.cpp
+C:\Users\moham\Downloads\Bank-System-main\Client.h(106,10): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Client.cpp')
+  
+  Emp.cpp
+C:\Users\moham\Downloads\Bank-System-main\Client.h(106,10): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Emp.cpp')
+  
+  Person.cpp
+  Generating Code...
+  Book System.vcxproj -> C:\Users\moham\Downloads\Bank-System-main\x64\Debug\Book System.exe

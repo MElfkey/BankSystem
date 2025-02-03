@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moham\\Downloads\\Bank-System-main\\Bank-System-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C9AC0943-A4C5-4937-B5F5-2E60374EA69B}|Book System.vcxproj|C:\\Users\\moham\\Downloads\\Bank-System-main\\Bank-System-main\\Book System.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C9AC0943-A4C5-4937-B5F5-2E60374EA69B}|Book System.vcxproj|solutionrelative:Book System.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Book System.cpp",
+              "DocumentMoniker": "C:\\Users\\moham\\Downloads\\Bank-System-main\\Bank-System-main\\Book System.cpp",
+              "RelativeDocumentMoniker": "Book System.cpp",
+              "ToolTip": "C:\\Users\\moham\\Downloads\\Bank-System-main\\Bank-System-main\\Book System.cpp",
+              "RelativeToolTip": "Book System.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-27T00:21:47.749Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
