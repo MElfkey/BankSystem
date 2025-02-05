@@ -53,34 +53,69 @@ int Person::lastID = 10000000;
  }
 
 //3- Name Organization:
-		//Remove any unwanted characters.
-string Person::nameOrg(string name) {
-	for (int i = 0; i < name.length(); i++) {
-		if (!isalpha(name[i]) && name[i] != ' ') {
-			name.erase(i, 1);
-			i--;
-		}
-	}
-	//Reduce the number of words to a maximum of 3 words.
-	int spaceCount = 0;
-	for (int i = 0; i < name.length(); i++) {
-		if (name[i] == ' ') {
-			spaceCount++;
-			if (spaceCount >= 3) {
-				name.erase(i); //Remove everything after the third distance
-				break;
-			}
-		}
-	}
-	//Reduce name length to 20 characters maximum
-	if (name.length() > 20) {
-		name = name.substr(0, 20); //Take only the first 20 characters.
-	}
-	return name;
-}
+ string nameOrg(string name) {
+    while (true) {
+        bool isValid = true;
+	
+        for (int i = 0; i < name.length(); i++) {
+            if (!(isalpha(name[i]) || name[i] == ' ')) {
+                isValid = false;
+                break;
+            }
+        }
+	
+        if (!isValid) {
+            cout << "Invalid input. Please enter a valid name (only letters and spaces, up to 20 characters): " << endl;
+            getline(cin, name);
+            continue;
+        }
+	
+        int counter = 0;
+        bool inword = false;
+        for (int i = 0; i < name.length(); i++) {
+            if (name[i] != ' ') {
+                if (!inword) {
+                    if (counter > 0) {
+                        name += ' ';
+                    }
+                    counter++;
+                    inword = true;
+                }
+            }
+            else {
+                inword = false;
+            }
+        }
+	
+        if (counter > 3) {
+            int spaceCount = 0;
+            for (int i = 0; i < name.length(); i++) {
+                if (name[i] == ' ') {
+                    spaceCount++;
+                    if (spaceCount >= 3) {
+                        name.erase(i);
+                        break;
+                    }
+                }
+            }
+        }
+	
+        if (name.length() > 20) {
+            cout << "Name is too long, it must be 20 or fewer characters. Truncating to 20 characters. \n" ;
+           
+            cout << "(only letters and spaces, up to 20 characters) : \n";
+            getline(cin, name);
+            continue;
+        }
+	
+        break;
+    }
+	
+    return name;
+} 
 //4- displayMessage:
 void Person::displayMessage() {
-	cout << "Welcome to our Bank System, " << getName() << "!\n";
+	cout << "Welcome to our Bank System, Mr\ " << getName() << "!\n";
 	cout << "Your ID is: " << idOrg(getID()) << endl;
 	cout << "We have an excellent team ready to assist you at any time!!." << endl;
 	cout << "We provide 24/7 and hope our service meets your satisfaction and approval." << endl;
