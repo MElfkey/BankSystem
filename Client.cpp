@@ -1,4 +1,5 @@
 #include "Client.h"
+int num_deposite=0 , stotal_trans=0;
 
 Client::Client() : balance(0.0) {}
 
