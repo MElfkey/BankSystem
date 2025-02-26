@@ -33,6 +33,12 @@
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SuperAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSourceInterface.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmployeeManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

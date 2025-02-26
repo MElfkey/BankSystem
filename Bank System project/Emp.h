@@ -5,21 +5,22 @@
 #include <vector>
 #include "Person.h"
 #include "Client.h"
+#include"FilesHelper.h"
 
 using namespace std;
 
 class Emp : public Person {
 protected:
     double salary;
-    vector<Client> clients;
 
 public:
     Emp() : Person() {
         this->salary = 5000;
     }
 
-    Emp(string name, string pass, double salary, int id) : Person(name, pass, id) {
+    Emp(string name, string pass, double salary, int id) : Person(name, pass,id) {
         setSalary(salary);
+        this->id = id;
     }
 
     void setSalary(double salary) {
@@ -28,25 +29,34 @@ public:
         else
             cout << "Minimum salary must be at least 5000.\n";
     }
+    void setId(int id) {
+        this->id = id;
+    }
 
-    double getSalary() {
+    double getSalary() const{
         return salary;
     }
 
 
-    void addClient(Client& client) {
-        cout << "Enter Client Name: \n";
-        getline(cin, name);
-        client.setName(name);
-        cout << "Enter Client Password: \n";
-        getline(cin, pass);
-        client.setPass(pass);
-        clients.push_back(client); 
+      void addClient(Client& client) {
+         cout << "Enter Client Name: \n";
+         getline(cin, name);
+         client.setName(name);
+         cout << "Enter Client Password: \n";
+         getline(cin, pass);
+         client.setPass(pass);
+         cout << "Enter Client Balance: \n";
+         double balance;
+         cin >> balance;
+         client.setBalance(balance);
+        allClients.push_back(client); 
+       FilesHelper::SaveClient(client);
+
         cout << "Mr. " << client.getName() << " added successfully.\n";
     }
 
     Client* searchClient(int id) {
-        for (auto& c : clients) {
+        for (auto& c :allClients) {
             if (c.getID() == id) {
                 return &c;
             }
@@ -54,11 +64,25 @@ public:
         return nullptr;
     }
 
+ 
+
     void listClient() {
-        for (auto& c : clients) {
+        for (auto& c : allClients) {
             c.displayInfo();
         }
     }
+
+   void deleteClient(int id) {
+    auto it = std::find_if(allClients.begin(), allClients.end(), [id](const Client& c) {
+        } );
+
+    if (it != allClients.end()) {
+        allClients.erase(it);
+        cout << "Client deleted successfully.\n";
+    } else {
+        cout << "Client not found.\n";
+    }
+}
 
     void editClient(int id, double balance) {
         Client* c = searchClient(id);
@@ -76,8 +100,11 @@ public:
     }
 
     void displayInfo() {
-        cout << "Employee Name: " << getName() << ", ID: " << idOrg(getID()) << ", Salary: " << salary << endl;
+        cout << "Employee Name: " << getName() << ", ID: " << getID() << ", Salary: " << salary << endl;
     }
 
     ~Emp() {}
 };
+
+static vector<Emp> emps;
+static vector<Emp> ::iterator empsit;

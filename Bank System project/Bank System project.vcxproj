@@ -129,17 +129,21 @@
   <ItemGroup>
     <ClCompile Include="Bank System project.cpp" />
     <ClCompile Include="DataSourceInterface.cpp" />
+    <ClCompile Include="EmployeeManager.cpp" />
     <ClCompile Include="FileManger.cpp" />
     <ClCompile Include="FilesHelper.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="SuperAdmin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataSourceInterface.h" />
+    <ClInclude Include="EmployeeManager.h" />
     <ClInclude Include="FileManger.h" />
     <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="SuperAdmin.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

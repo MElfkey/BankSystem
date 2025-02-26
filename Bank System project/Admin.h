@@ -1,16 +1,15 @@
 #pragma once
-#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include "Person.h"
 #include "Emp.h"
 #include "Client.h"
+#include "FilesHelper.h"
 
 using namespace std;
 
 class Admin : public Emp {
-    vector<Client> clients;
-    vector<Emp> emps;
 
 public:
     Admin() {}
@@ -33,6 +32,8 @@ public:
         double salary;
         cin >> salary;
         Emp.setSalary(salary);
+        emps.push_back(Emp);
+        FilesHelper::SaveEmp(Emp);
         cout << "mr " << Emp.getName() << " added successfully.\n";
     }
 
@@ -65,10 +66,27 @@ public:
             emp.displayInfo();
         }
     }
+    void deleteEmp(int id) {
+        auto it = std::find_if(emps.begin(), emps.end(), [id](const Emp& emp) {
+            return emp.getID() == id;
+            });
+
+        if (it != emps.end()) {
+            FilesHelper::SaveEmp(*it); 
+            emps.erase(it);
+            cout << "Employee deleted successfully.\n";
+        }
+        else {
+            cout << "Employee not found.\n";
+        }
+    }
 
     void displayInfo() {
-        cout << "Admin Name: " << getName() << ", ID: " << idOrg(getID()) << ", Salary: " << salary << endl;
+        cout << "Admin Name: " << getName() << ", ID: " << getID() << ", Salary: " << getSalary() << endl;
     }
 
     ~Admin() {}
 };
+
+static vector<Admin> admins;
+static vector<Admin> ::iterator adminsit;

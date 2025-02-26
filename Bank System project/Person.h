@@ -9,23 +9,21 @@ protected:
     string name;
     int id;
     string pass;
-    static int lastID;
 
 public:
     Person();
     Person(string name, string pass, int id);
-
+    void setId(int id);
     void setName(string name);
     void setPass(string pass);
     string getName();
-    int getID();
+    int getID() const;
     string getPass();
-
-    static int createID();
-    static string idOrg(int id);
     string nameOrg(string name);
 
- 
     ~Person();
 };
 
+inline int Person::getID() const {
+    return id;
+}

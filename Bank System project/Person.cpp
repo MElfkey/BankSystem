@@ -1,17 +1,14 @@
 #include "Person.h"
-
-// Initialize static member
-int Person::lastID = 1000000000;
+static int id = 0000000;
 
 // Default constructor
-Person::Person() {
-    this->id = createID();
+Person::Person() : id(0) {
 }
 
 // Parameterized constructor
 Person::Person(string name, string pass, int id) {
     this->name = name;
-    this->id = createID();
+    this->id = id;
     this->pass = pass;
 }
 
@@ -29,28 +26,16 @@ string Person::getName() {
     return name;
 }
 
-int Person::getID() {
+void Person::setId(int id) {
+    this->id = id;
+}
+
+int Person::getID() const {
     return id;
 }
 
 string Person::getPass() {
     return pass;
-}
-
-// Create ID
-int Person::createID() {
-    lastID += 1;
-    return lastID;
-}
-
-// ID Organization
-string Person::idOrg(int id) {
-    string idStr = to_string(id);
-    // Pad with leading zeros to ensure it's exactly 8 digits
-    while (idStr.length() < 8) {
-        idStr.insert(0, "0");
-    }
-    return idStr;
 }
 
 // Name Organization
@@ -100,6 +85,7 @@ string Person::nameOrg(string name) {
 
     return name;
 }
+
 // Destructor
 Person::~Person() {
 }

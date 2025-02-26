@@ -16,8 +16,9 @@ public:
         this->balance = 0;
     }
 
-    Client(string name, string pass, double balance, int id) : Person(name, pass, id) {
+    Client(string name, string pass, double balance, int id) : Person(name, pass,id) {
         this->balance = balance;
+        this->id = id;
     }
 
     void setBalance(double balance) {
@@ -27,7 +28,9 @@ public:
     double getBalance() {
         return balance;
     }
-
+    void setId(int id) {
+        this->id = id;
+    }
     void deposit() {
         double amount;
         while (true) {
@@ -118,6 +121,8 @@ public:
         return total_trans;
     }
 
+
+
     void displayInfo() {
         cout << "The user name is: " << getName() << endl;
         cout << "The user id is: " << getID() << endl;
@@ -125,5 +130,10 @@ public:
         cout << "The number of transactions the user has done: " << total_trans << endl;
     }
 
+
+
     ~Client() {}
 };
+
+static vector<Client> allClients;
+static vector <Client>::iterator clientit;
